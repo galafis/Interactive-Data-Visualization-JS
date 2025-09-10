@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Data Visualization JS - Demo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f7f7f7; }
+    #viz-container { margin: 40px auto; max-width: 900px; background: #fff; box-shadow: 0 2px 16px #0001; border-radius: 5px; padding: 24px; }
+    h1 { text-align: center; color: #1976d2; }
+  </style>
+</head>
+<body>
+  <h1>Interactive Data Visualization JS &mdash; Demo</h1>
+  <div id="viz-container"></div>
+
+  <script type="module">
+    import CanvasChart from './src/charts/CanvasChart.js';
+    // Exemplo de dados aleatórios
+    const data = Array.from({ length: 30 }, (_, i) => ({
+      x: Math.random() * 500 + 50,
+      y: Math.random() * 300 + 50,
+      color: i % 2 === 0 ? "#1976D2" : "#388E3C",
+      radius: Math.random() * 8 + 4
+    }));
+
+    const chart = new CanvasChart({
+      container: 'viz-container',
+      width: 700,
+      height: 400,
+      backgroundColor: '#fff'
+    });
+
+    chart.setData(data);
+    chart.render();
+  </script>
+</body>
+</html>
