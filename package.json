@@ -1,0 +1,10 @@
+{
+  "name": "interactive-data-visualization-js",
+  "version": "1.0.0",
+  "description": "> Professional repository showcasing advanced development skills",
+  "main": "main.js",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "license": "MIT"
+}
